@@ -1,20 +1,6 @@
 # 🎫 Service Ticket App (Angular + ASP.NET Core)
 
 - A simple full-stack application demonstrating:
-- Angular (MVVM-style, two-way binding)
-- ASP.NET Core Web API (async/await)
-- RESTful API integration
-- Clean frontend/backend separation
-- Local development with a single command
-
-## ⚙️ Prerequisites
-
-Node.js (LTS recommended)
-Angular CLI
-
-# 🎫 Service Ticket App (Angular + ASP.NET Core)
-
-- A simple full-stack application demonstrating:
   - Angular (MVVM-style, two-way binding)
   - ASP.NET Core Web API (async/await)
   - RESTful API integration
