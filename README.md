@@ -99,7 +99,7 @@ Navigate to the backend folder and create a Web API project.
 ```bash
 cd backend
 dotnet new webapi -n ServiceTicketApi
-cd TicketApi
+cd ServiceTicketApi
 ```
 
 Run the API to verify it starts successfully:
@@ -121,8 +121,8 @@ Navigate to the frontend folder and create the Angular application.
 
 ```bash
 cd ../../frontend
-ng new ticket-ui
-cd ticket-ui
+ng new service-ticket-ui
+cd service-ticket-ui
 ```
 
 Recommended CLI selections:
@@ -146,7 +146,7 @@ Step 4: Configure Angular Proxy for API Calls
 
 To allow the Angular app to call the ASP.NET Core API without CORS issues, configure a development proxy.
 
-Create frontend/ticket-ui/proxy.conf.json:
+Create frontend/service-ticket-ui/proxy.conf.json:
 
 ```json
 {
@@ -192,16 +192,16 @@ This ensures proper cross-origin support when the frontend and backend run on di
 
 Step 6: Add Root Scripts to Run Both Applications Together
 
-At the repository root (ticket-app/), create a package.json file:
+At the repository root (service-ticket-app/), create a package.json file:
 
 ```json
 {
-  "name": "ticket-app",
+  "name": "service-ticket-app",
   "private": true,
   "scripts": {
-    "install:ui": "npm install --prefix frontend/ticket-ui",
-    "start:api": "dotnet run --project backend/TicketApi",
-    "start:ui": "npm start --prefix frontend/ticket-ui",
+    "install:ui": "npm install --prefix frontend/service-ticket-ui",
+    "start:api": "dotnet run --project backend/ServiceTicketApi",
+    "start:ui": "npm start --prefix frontend/service-ticket-ui",
     "start": "concurrently \"npm run start:api\" \"npm run start:ui\""
   },
   "devDependencies": {

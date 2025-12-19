@@ -1,0 +1,13 @@
+{
+  "name": "service-ticket-app",
+  "private": true,
+  "scripts": {
+    "install:ui": "npm install --prefix frontend/service-ticket-ui",
+    "start:api": "dotnet run --project backend/ServiceTicketApi",
+    "start:ui": "npm start --prefix frontend/service-ticket-ui",
+    "start": "concurrently \"npm run start:api\" \"npm run start:ui\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
