@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServiceTicketApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+624121db9cd865876f48dbba9c44bda88338a062")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+877e47a73fa2ee2979ac4a46e29b8681b2694205")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServiceTicketApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServiceTicketApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
