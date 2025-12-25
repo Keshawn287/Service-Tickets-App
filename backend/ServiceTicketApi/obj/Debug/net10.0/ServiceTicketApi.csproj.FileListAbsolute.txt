@@ -32,3 +32,6 @@ C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\obj\Debug\ne
 C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\obj\Debug\net10.0\ServiceTicketApi.pdb
 C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\obj\Debug\net10.0\ServiceTicketApi.genruntimeconfig.cache
 C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\obj\Debug\net10.0\ref\ServiceTicketApi.dll
+C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Temp\GitHubProjects\Service-Tickets-App\backend\ServiceTicketApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
