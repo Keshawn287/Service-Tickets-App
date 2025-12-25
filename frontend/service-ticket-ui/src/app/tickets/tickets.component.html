@@ -1,0 +1,130 @@
+<div class="container">
+  <header>
+    <h1>Service Tickets</h1>
+  </header>
+
+  <!-- Status / errors -->
+  @if (error) {
+  <div style="margin: 10px 0; padding: 8px; border: 1px solid #f5c2c7; background: #f8d7da">
+    {{ error }}
+  </div>
+  } @if (loading) {
+  <div style="margin: 10px 0">Loading</div>
+  }
+
+  <div>
+    <!-- Create/Edit form -->
+    <!-- <section style="border: 1px solid #ddd; padding: 12px; margin: 12px 0"> -->
+    <section class="create-ticket-container">
+      <h2>@if (editingId === null) { Create Ticket } @else { Edit Ticket #{{ editingId }} }</h2>
+
+      <form (ngSubmit)="save()" #ticketForm="ngForm">
+        <div class="field">
+          <label>
+            Title
+            <input
+              class="control"
+              name="title"
+              required
+              [(ngModel)]="vm.title"
+              placeholder="Ticket title"
+            />
+          </label>
+
+          <!-- simple validation message -->
+          @if (ticketForm.submitted && !vm.title.trim()) {
+          <div class="error-text">Title is required.</div>
+          }
+        </div>
+
+        <div class="row">
+          <label class="field">
+            Status
+            <select class="control" name="status" [(ngModel)]="vm.status">
+              <option value="open">Open</option>
+              <option value="in_progress">In Progress</option>
+              <option value="closed">Closed</option>
+            </select>
+          </label>
+
+          <label class="field">
+            Priority
+            <select class="control" name="priority" [(ngModel)]="vm.priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="field">
+          <label>
+            Notes
+            <textarea
+              class="control"
+              name="notes"
+              [(ngModel)]="vm.notes"
+              rows="3"
+              placeholder="Optional notes"
+            ></textarea>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit" [disabled]="loading">
+            @if (editingId === null) { Create } @else { Save }
+          </button>
+
+          @if (editingId !== null) {
+          <button class="btn" type="button" (click)="cancelEdit()" [disabled]="loading">
+            Cancel
+          </button>
+          }
+
+          <button class="btn" type="button" (click)="refresh()" [disabled]="loading">
+            Refresh
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <!-- Tickets list -->
+  <div>
+    @if (loading) {
+    <div class="status">Loading...</div>
+    } @else if (tickets.length === 0) {
+    <div class="status">No tickets found.</div>
+    } @else {
+    <div class="ticket-card-grid">
+      @for (t of tickets; track t.id) {
+      <div class="ticket-card">
+        <div class="ticket-card-header">
+          <h3>{{ t.title }}</h3>
+        </div>
+
+        Status: {{ t.status }}<br />
+        Priority: {{ t.priority }}<br />
+
+        @if (t.notes) {
+        <div class="status">Notes: {{ t.notes }}</div>
+        }
+
+        <div class="actions">
+          <button class="btn" type="button" (click)="startEdit(t)" [disabled]="loading">
+            Edit
+          </button>
+
+          <button class="btn" type="button" (click)="remove(t.id)" [disabled]="loading">
+            Delete
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Service Tickets App</p>
+  </footer>
+</div>

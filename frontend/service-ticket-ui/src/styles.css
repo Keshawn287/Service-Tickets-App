@@ -1,1 +1,144 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #e9edf2;
+  /* --card: #14161b; */
+  --text: #14161b;
+  /* --accent: #ff8fb7;
+  --accent-soft: #ffb7d5; */
+  --ring: #3a3f54;
+}
+
+html,
+body #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header and Footer Section */
+header {
+  text-align: center;
+  padding: 1rem 0 2rem;
+  border-bottom: 1px solid #222839;
+}
+
+footer {
+  border-top: 1px solid #222839;
+  margin-top: 1rem;
+  padding: 1.25rem 0 2.5rem;
+  text-align: center;
+  height: 100px; /* match this with the calc above */
+}
+
+/* Create/Edit Form Styles */
+.create-ticket-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1rem;
+} */
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 12px;
+}
+
+.control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-color: var(--ring);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error-text {
+  color: #b02a37;
+  margin-top: 4px;
+}
+
+.status {
+  margin: 10px 0;
+}
+
+/* Ticket Card Styles */
+.ticket-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.ticket-card {
+  border: 1px solid #262c3b;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: var(--ring);
+  transition: transform 0.08s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+.ticket-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-color: var(--ring);
+}
+
+.ticket-card-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
